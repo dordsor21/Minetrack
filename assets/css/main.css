@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #2E2B2C;
+    background: #212021;
     color: #FFF;
     font-family: "Open Sans", sans-serif;
     font-size: 18px;
@@ -27,17 +27,39 @@ a {
     min-height: 100%;
 }
 
+strong {
+    font-weight: 700;
+}
+
+/* Constants */
+#header, #footer, #tagline {
+
+}
+
 /* Header */
 #header {
     background: #EBEBEB;
     color: #3B3738;
-    padding: 20px 0;
     overflow: auto;
-    margin-top: 44px;
+}
+
+#header-wrapper {
+    overflow: auto;
+    min-width: 850px;
+}
+
+#header .column {
+    display: inline-block;
+    float: left;
+}
+
+#header .column h1 {
+    margin: -6px 0;
 }
 
 #header .slogan {
     font-size: 20px;
+    text-align: left;
 }
 
 #header .subslogan {
@@ -66,66 +88,54 @@ a {
 
 /* Footer */
 #footer {
-    width: 1540px;
     font-size: 16px;
     text-transform: uppercase;
     background: #EBEBEB;
     color: #3B3738;
     padding: 15px 0;
-    margin: 0 auto;
-    border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
-    text-align: center;
+    min-width: 950px;
+    margin-top: 15px;
+}
+
+#footer a {
+    font-weight: 700;
+    border-bottom: none !important;
+}
+
+#footer a:hover {
+    border-bottom: 1px dashed #000 !important;
 }
 
 /* Tagline */
-#tagline {
-    padding: 10px 0;
-    width: 100%;
-    z-index: 999999; /* I'm so sorry. */
-    position: fixed;
-    left: 0;
-    top: 0;
-}
-
-#tagline-center {
-    width: 1520px;
-    margin: 0 auto;
-}
-
-/* Colors used by the Mojang service's status bar */
-.status-online {
-    background: #87D37C;
-    color: #3B3738;
-}
-
-.status-unstable {
-    background: #E9E581;
-    color: #3B3738;
-}
-
-.status-offline {
-    background: #e74c3c;
-}
-
-.status-connecting {
-    background: #3498db;
+#tagline-text {
+    padding-top: 20px;
+    text-align: center;
 }
 
 /* Server listing */
 .server-container {
-    width: 1540px;
-    margin: 10px auto;
     overflow: auto;
+    display: flex; flex-wrap: wrap; justify-content: center;
 }
 
 .server {
-    overflow: auto;
     padding: 5px 10px;
     margin: 0 5px;
-    width: 740px;
+    width: 738px;
+    border: 1px solid transparent;
     display: inline-block;
 }
+
+.version {
+	font-size: 12px;
+}
+
+/*.server:hover {
+    background: #282828;
+    border: 1px solid #444;
+    cursor: pointer;
+    border-radius: 2px;
+}*/
 
 .server > .column > img {
     border-radius: 2px;
@@ -142,10 +152,6 @@ a {
     padding-top: 4px;
 }
 
-.server > .column > .url {
-    font-size: 16px;
-}
-
 .server > .column > h3 > .type {
     padding: 1px 5px;
     border-radius: 2px;
@@ -154,23 +160,15 @@ a {
     margin-bottom: 2px;
 }
 
-.server > .column > .versions {
-    min-height: 23px;
-    padding-bottom: 1px;
-}
-
-.server > .column > .versions > .version {
-    padding: 1px 5px;
-    border-radius: 2px;
-    border: 1px solid #636363;
-    font-size: 12px;
-}
-
 .category-header {
     margin-bottom: 10px;
     margin-left: 15px;
     text-align: left;
     display: none;
+}
+
+.server-meta {
+    font-size: 16px !important;
 }
 
 /* Charts */
@@ -187,7 +185,7 @@ a {
     padding: 5px;
     border-radius: 3px;
     background: rgba(0, 0, 0, 0.65);
-    z-index: 999;
+    z-index: 10000;
 }
 
 /* Existing elements */
@@ -198,6 +196,10 @@ h3 {
 /* Basic classes used randomly */
 .color-gray {
     color: #C4C4C4;
+}
+
+.color-dark-gray {
+    color: #A3A3A3;
 }
 
 .color-red {
@@ -214,7 +216,7 @@ h3 {
 
 /* The big graph */
 #big-graph, #big-graph-controls, #big-graph-checkboxes {
-    width: 1540px;
+    width: 90%;
     margin: 15px auto 0 auto;
 }
 
@@ -256,4 +258,41 @@ h3 {
 .button:hover {
     background: #ecf0f1;
     color: #3498db;
+    cursor: pointer;
+}
+
+/* Percentage bar */
+#perc-bar {
+    height: 35px;
+    position: relative;
+}
+
+#perc-bar > .perc-bar-part {
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+    transition: 0.1s all;
+}
+
+#perc-bar > .perc-bar-part:hover {
+    opacity: 0.75;
+}
+
+/* Mojang Status */
+.mojang-status {
+    width: 85px;
+    height: 106px;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.mojang-status > strong {
+    text-transform: uppercase;
+}
+
+.mojang-status > i {
+    margin-top: 20px;
+    font-size: 22px;
 }

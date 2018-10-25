@@ -1,3 +1,15 @@
+**3.1.0** *(Mar 14 2017)*
+- Updated design. More flexible!
+- Automatically builds indexes on database.
+- Fixes issue with record query.
+
+**3.0.0** *(Mar 11 2017)*
+- Adds player count records.
+- Adds "serverTypesVisible" to hide PC/PE badges.
+- Moves Minecraft protocol versions out of site.js and into minecraft.json.
+- Design tweaks to remove fluff.
+- Fixes various bugs.
+
 **2.2.2** *(Jul 5 2016)*
 - Now builds against mcpe-ping-fixed (requires a ```npm install```)!
 
